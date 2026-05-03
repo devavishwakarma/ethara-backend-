@@ -1,0 +1,6 @@
+from pydantic import BaseModel
+
+class TaskCreate(BaseModel):
+    title: str
+    project_id: int
+    assigned_to: int
