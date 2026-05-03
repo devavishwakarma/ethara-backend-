@@ -5,7 +5,7 @@ from app.models.user import User
 from app.utils.security import hash_password, verify_password, create_token
 from app.schemas.user import UserCreate
 
-router = APIRouter()   # ✅ THIS IS REQUIRED
+router = APIRouter()   
 
 
 def get_db():
@@ -23,7 +23,7 @@ def signup(data: UserCreate, db: Session = Depends(get_db)):
         name=data.name,
         email=data.email,
         password=hash_password(data.password),
-        role=data.role   # ✅ this is correct
+        role=data.role   
     )
 
     db.add(user)
