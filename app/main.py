@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-load_dotenv()   # ✅ FIRST
+load_dotenv()  
 
 from fastapi import FastAPI
 from app.routes import auth
@@ -19,7 +19,7 @@ app.include_router(project.router, prefix="/project")
 app.include_router(task.router, prefix="/task")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # for now (you can restrict later)
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
